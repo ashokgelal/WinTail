@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="WinTail.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Messages.cs">
+    <Files>
+      <File FileName="Program.cs" Line="14" Column="32" />
+      <File FileName="ConsoleReaderActor.cs" Line="19" Column="1" />
+      <File FileName="ConsoleWriterActor.cs" Line="18" Column="13" />
+      <File FileName="Messages.cs" Line="25" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
