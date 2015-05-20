@@ -10,13 +10,7 @@ namespace WinTail
     class ConsoleReaderActor : UntypedActor
     {
         public const string ExitCommand = "exit";
-        private IActorRef _validationActor;
         public const string StartCommand = "start";
-
-        public ConsoleReaderActor(IActorRef validationActor)
-        {
-            _validationActor = validationActor;
-        }
 
         protected override void OnReceive(object message)
         {
@@ -40,7 +34,7 @@ namespace WinTail
                 Context.System.Shutdown();
                 return;
             }
-            _validationActor.Tell(message);
+            Context.ActorSelection("akka://MyActorSystem/user/validationActor").Tell(message);
         }
 
         private static bool IsValid(string message)
