@@ -66,6 +66,13 @@ namespace WinTail
         {
             _reporterActor = reporterActor;
             _filePath = filePath;
+        }
+
+        /// <summary>
+        /// Initialization logic for actor that will tail changes to a file.
+        /// </summary>
+        protected override void PreStart()
+        {
             _observer = new FileObserver(Self, Path.GetFullPath(_filePath));
             _observer.Start();
 
@@ -99,6 +106,14 @@ namespace WinTail
                 _reporterActor.Tell(ir.Text);
             }
         }
+
+        protected override void PostStop()
+        {
+            _observer.Dispose();
+            _observer = null;
+            _fileStreamReader.Close();
+            _fileStreamReader.Dispose();
+            base.PostStop();
+        }
     }
 }
-
